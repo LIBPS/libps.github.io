@@ -18,5 +18,6 @@
 
 ------------
 #### 官方网站维护："Buck Qian"
-#### 另外平台网站：[洛谷官方网站](https://www.luogu.com.cn/paste/6luhnc4t)(现已停用)
-##### [简体中文（中国大陆） - 切换您的语言](../index)
+#### [另外平台网站：洛谷官方网站 现已停用](https://www.luogu.com.cn/paste/libps)
+
+##### [简体中文（中国大陆） - 切换您的语言](https://libps.github.io/index)
