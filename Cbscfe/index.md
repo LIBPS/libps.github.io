@@ -1,7 +1,8 @@
 ## 网站主页 [软件产品](products.md) [关于我们](about_us.md)
 
 ### 最近更新
-无
+有争议，制作叫停\
+请使用[Buck Qian版本](../zh/index.md)
 
 ---
 ### 问答
