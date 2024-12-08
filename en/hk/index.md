@@ -1,11 +1,12 @@
 # LIB Provisional Studio English Official Website
 
+## [$\color{red} {Don't} $ $\color{red} {forget} $ $\color{red} {Nanjing}$ $\color{red} {[Nanjing} $ $\color{red} {Massacre]} $](Remember-Nanjing/en/index)
+
 **Home** **[Software](Software)** **[News](News)** **[About us](About_us)** 
 
 ------------
-### Due to significant issues with the website page, [LIB Provisional Studio](https://www.github.com/LIBPS) We will overwrite the current page and update the version of the National Memorial Day(China) webpage before December 9th.
-------------
 ### - Recent Update:字典程序 Chinese dictionary [[LIB Provisional Studio:Software]](Software)
+
 ------------
 ### LIB Provisional Studio News：[The NEW Website Migration Has Been Successfully Completed On Github!](news/move_welcome)
 

@@ -1,0 +1,11 @@
+# $\color{red}{Remember}$ $\color{red}{Nanjing}$ $\color{red}{Massacre}$
+##### [简体中文](https://libps.github.io/Remember-Nanjing/zh/index) | [繁體中文](https://libps.github.io/Remember-Nanjing/zh-tc/index) | [ENGLISH](https://libps.github.io/Remember-Nanjing/en/index) | [日本語](https://libps.github.io/Remember-Nanjing/ja/index)
+------------ -------------
+
+Nanjing is a historical and cultural city with a history of more than 2,500 years. It is one of the important birthplaces of Chinese civilization. From December 13, 1937 to January 1938, the Japanese invaders blatantly violated international conventions; they seized Nanjing, the capital city of China at that time, and slaughtered innocent civilians and prisoners of war. Over 300,000 people were killed. One-third of Nanjing's buildings were destroyed, more than 20,000 cases of rape or  gang rape occurred in the city, public and private property were plundered, and the ancient capital suffered an unprecedented disaster.This bloody event was later known to the world as the "Nanjing Massacre" (or the "Nanking Massacre").
+
+During and after the occurrence of Nanjing Massacre, _American New York Times_ and _Life magazine_, _British Times_, _Russian Pravda_, _Chinese Central Daily News_ and _Xinhua Daily_, and other domestic and foreign media made lots of reports on the incident. The Chinese and foreigners who stayed in Nanjing as well as the European and American diplomats who returned to Nanjing in early1938 recorded or secretly photographed the Japanese atrocities in Nanjing. Those Chinese who had stayed in Nanjing and experienced or witnessed the Japanese atrocities  left a lot of testimonies too. The Japanese officers and soldiers  who once participated in the Nanjing Massacre also left a lot of records.
+
+After the war, both the International Military Tribunal for the Far East and the Nanjing War Crimes Tribunal (Nanjing Military Court for the Trial of War Criminals) conducted a special trial of the Nanjing Massacre. In October 2015, UNESCO included the "Nanjing Massacre Archives" in the Memory of the World Register. The Nanjing Massacre is a brutal  crime  to civilization and a havoc of mankind. All peace-loving people should not forget this history.
+
+![Nanjing-Massacre](Nanjing_in_19371213.png)

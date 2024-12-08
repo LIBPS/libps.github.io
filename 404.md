@@ -19,7 +19,3 @@
 - Español (España)
 - Português (Portugal)
 - Português (Brasil)
-
-## 娱乐语言
-
-- アメリカン イングリッシュ (ジャパン)

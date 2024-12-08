@@ -1,9 +1,9 @@
 # LIB 临时工作室汉语官方网站
 
+## [$\color{red} {不要忘记南京——南京大屠杀} $](Remember-Nanjing/zh/index)
+
 **网站主页** **[软件产品](Software)** **[工作室快讯](News)** **[关于我们](About_us)** 
 
-------------
-### 由于网站页面发生重大问题，[LIB 临时工作室](https://www.github.com/LIBPS) 将在十二月九日之前覆盖当前页面，更新国家公祭日网页版本。
 ------------
 ### - 最近更新:字典程序 Chinese dictionary [[LIB 临时工作室：软件产品]](Software)
 

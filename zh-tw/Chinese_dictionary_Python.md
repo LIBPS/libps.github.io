@@ -14,7 +14,7 @@ def main_screen():
     global gui_beta
     if gui_beta == False:
         clear_screen()
-        print(f"""歡迎來到字典程序(py addition)(By:LIB Provisional Studio)\t\t{"debug = True" if debug else ""}
+        print(f"""歡迎來到字典程序(py addition)(By:MiXiaozai Studio)\t\t{"debug = True" if debug else ""}
 
 請選擇您的模式(輸入前面的序號)
  s.查字模式
@@ -199,7 +199,7 @@ def dev():
     clear_screen()
     input("""主要開發:Lucas
     
-原版製作:Buck Qian
+原版製作:米小仔
     """)
     main_screen()()
 def settings():
