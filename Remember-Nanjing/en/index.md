@@ -1,4 +1,4 @@
-# $\color{red}{Remember}$ $\color{red}{Nanjing}$ $\color{red}{Massacre}$
+# Remember Nanjing Massacre
 ##### [简体中文](https://libps.github.io/Remember-Nanjing/zh/index) | [繁體中文](https://libps.github.io/Remember-Nanjing/zh-tc/index) | [ENGLISH](https://libps.github.io/Remember-Nanjing/en/index) | [日本語](https://libps.github.io/Remember-Nanjing/ja/index)
 ------------ -------------
 

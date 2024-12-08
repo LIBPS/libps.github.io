@@ -1,4 +1,4 @@
-# $\color{red}{南京大虐殺を忘れないで}$
+# 南京大虐殺を忘れないで
 ##### [简体中文](https://libps.github.io/Remember-Nanjing/zh/index) | [繁體中文](https://libps.github.io/Remember-Nanjing/zh-tc/index) | [ENGLISH](https://libps.github.io/Remember-Nanjing/en/index) | [日本語](https://libps.github.io/Remember-Nanjing/ja/index)
 ------------ -------------
 1937年12月13日、日本軍が南京を占領した後、公然と国際条約を違反し、武器を放棄した中国人兵士と一般大衆を無差別に虐殺した。南京市の当時の三分の一の建築物が焼かれ破壊され、市内で起きた強姦、輪姦の暴行が二万件ほどあり、遭難者数が戦後南京審判戦犯軍事法廷の判決によると、30万以上に達している。古都南京は空前の災難に遭った。

@@ -1,6 +1,6 @@
 # LIB Provisional Studio English Official Website
 
-## [$\color{red} {Don't} $ $\color{red} {forget} $ $\color{red} {Nanjing}$ $\color{red} {[Nanjing} $ $\color{red} {Massacre]} $](Remember-Nanjing/en/index)
+## [Don't forget Nanjing Massacre](https://libps.github.io/Remember-Nanjing/en/index)
 
 **Home** **[Software](Software)** **[News](News)** **[About us](About_us)** 
 
