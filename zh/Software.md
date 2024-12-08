@@ -17,5 +17,5 @@
 ------------
 #### [产品问题或建议反馈 请发送给我们的邮箱](mailto:LIB_Provisional_Studio@outlook.com)
 ------------
-### [返回LIB临时工作室：网站主页](index)
+### [返回LIB 临时工作室：网站主页](index)
 ##### [简体中文（中国大陆） - 切换您的语言](https://libps.github.io/index)
