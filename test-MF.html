@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIB 临时工作室 迈克尔基金会（Michael Foundation）</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 750px; /* Adjusted max-width */
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5em;
+        }
+        .donation-info {
+            background-color: #e0e0e0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .donor-list {
+            background-color: #e0e0e0;
+            padding: 8px 15px;
+            border-radius: 5px;
+            height: 200px; /* Set a fixed height for the scrollable area */
+            overflow-y: auto; /* Enable vertical scrolling */
+            margin-bottom: 20px;
+        }
+        .donor-list-item {
+            margin-bottom: 0.5em;
+        }
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .lang-selector {
+            margin-bottom: 20px;
+        }
+        .lang-selector a {
+            margin: 0 10px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .lang-selector a:hover {
+            text-decoration: underline;
+        }
+        目标金额, .已筹集金额 {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-selector">
+            <a href="#" onclick="setLang('zh')">简体中文</a> | 
+            <a href="#" onclick="setLang('en')">English</a>
+        </div>
+        <h2>LIB 临时工作室 迈克尔基金会</h2>
+        <h3>LIBPS Michael Foundation</h3>
+        <p>我们成立 迈克尔基金会 (Michael Foundation,MF)是为了帮助像 Michael 这样的孩子实现他们游玩正版服务器的梦想。通过资助来使他们获得游戏娱乐。</p>
+
+        <div class="donation-info">
+            <h2>已筹款金额</h2>
+            <p class="目标金额">目标金额：￥89</p>
+            <p class="已筹集金额">已筹集金额：￥31（实际捐赠￥20）</p>
+        </div>
+
+        <h1></h1>
+        <div class="donor-list">
+            <h2>捐款人名单</h2>
+            <h4>您的捐款信息将会在每周五更新</h4>
+            <ul>
+                <li class="donor-list-item">Buck Qian 捐款20元，实际已支付20元。</li>
+                <!-- 这里可以添加更多的捐款人信息 -->
+                <!-- Example of more donors -->
+                <li class="donor-list-item">Lucas 捐款11元，实际已支付0元。</li>
+                <!-- Add as many as needed -->
+            </ul>
+        </div>
+    </div>
+    <script>
+        function setLang(lang) {
+            if (lang === 'en') {
+                document.title = 'LIB Provisional Studio Michael Foundation';
+                document.querySelector('h2').textContent = 'LIB Provisional Studio Michael Foundation';
+                document.querySelector('h3').textContent = 'LIB 临时工作室 迈克尔基金会';
+                document.querySelector('p').textContent = 'We established the Michael Foundation (MF) to help children like Michael realize their dreams of playing on legitimate servers. Through funding, we enable them to have fun and entertainment in gaming.';
+                document.querySelector('.donation-info h2').textContent = 'Funds Raised';
+                document.querySelector('.donation-info .目标金额').textContent = 'Target Amount: ￥89';
+                document.querySelector('.donation-info .已筹集金额').textContent = 'Raised Amount: ￥31 (Actual Donation: ￥20)';
+                document.querySelector('.donor-list h2').textContent = 'Donor List';
+                document.querySelector('.donor-list h4').textContent = 'Your donation information will be updated every Friday.';
+                document.querySelector('.lang-selector a:first-child').style.color = '#333'; // Set default color for current language
+                document.querySelector('.lang-selector a:last-child').style.color = '#4CAF50'; // Highlight selected language
+            } else {
+                document.title = 'LIB 临时工作室 迈克尔基金会';
+                document.querySelector('h2').textContent = 'LIB 临时工作室 迈克尔基金会';
+                document.querySelector('h3').textContent = 'LIBPS Michael Foundation';
+                document.querySelector('p').textContent = '我们成立 迈克尔基金会 (Michael Foundation,MF)是为了帮助像 Michael 这样的孩子实现他们游玩正版服务器的梦想。通过资助来使他们获得游戏娱乐。';
+                document.querySelector('.donation-info h2').textContent = '已筹款金额';
+                document.querySelector('.donation-info .目标金额').textContent = '目标金额：￥89';
+                document.querySelector('.donation-info .已筹集金额').textContent = '已筹集金额：￥31（实际捐赠￥20）';
+                document.querySelector('.donor-list h2').textContent = '捐款人名单';
+                document.querySelector('.donor-list h4').textContent = '您的捐款信息将会在每周五更新';
+                document.querySelector('.lang-selector a:first-child').style.color = '#4CAF50'; // Highlight selected language
+                document.querySelector('.lang-selector a:last-child').style.color = '#333'; // Set default color for current language
+            }
+        }
+    </script>
+</body>
+</html>
