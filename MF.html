@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIB 临时工作室 迈克尔基金会（Michael Foundation）</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5em;
+        }
+        .donation-info {
+            background-color: #e0e0e0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .donor-list {
+            background-color: #e0e0e0;
+            padding: 8px 15px;
+            border-radius: 5px;
+            height: 200px; /* Set a fixed height for the scrollable area */
+            overflow-y: auto; /* Enable vertical scrolling */
+            margin-bottom: 20px;
+        }
+        .donor-list-item {
+            margin-bottom: 0.5em;
+        }
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        目标金额, .已筹集金额 {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LIB 临时工作室 迈克尔基金会</h1>
+        <h2>LIBPS Michael Foundation</h2>
+        <p>我们成立 迈克尔基金会 (Michael Foundation,MF)是为了帮助像 Michael 这样的孩子实现他们游玩正版服务器的梦想。通过资助来使他们获得游戏娱乐。</p>
+
+        <div class="donation-info">
+            <h2>已筹款金额</h2>
+            <p class="目标金额">目标金额：￥89</p>
+            <p class="已筹集金额">已筹集金额：￥31（实际捐赠￥20）</p>
+        </div>
+
+        <a href="https://example.com/donate" class="button" target="_blank">立即捐助</a>
+        <h1></h1>
+        <div class="donor-list">
+            <h2>捐款人名单</h2>
+            <h4>您的捐款信息将会在每周五更新</h4>
+            <ul>
+                <li class="donor-list-item">Buck Qian 捐款20元，实际已支付20元。</li>
+                <!-- 这里可以添加更多的捐款人信息 -->
+                <!-- Example of more donors -->
+                <li class="donor-list-item">Lucas 捐款11元，实际已支付0元。</li>
+                <!-- Add as many as needed -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
