@@ -1,7 +1,5 @@
 # LIB Provisional Studio English Official Website
 
-## [Don't forget Nanjing Massacre](https://libps.github.io/Remember-Nanjing/en/index)
-
 **Home** **[Software](Software)** **[News](News)** **[About us](About_us)** 
 
 ------------

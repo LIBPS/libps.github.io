@@ -1,6 +1,5 @@
 # LIB 臨時工作室漢語官方網站
 
-## [不要忘記南京——南京大屠殺](https://libps.github.io/Remember-Nanjing/zh-tc/index)
 
 **網站主頁** **[軟件產品](Software)** **[工作室快訊](News)** **[關於我們](About_us)** 
 
