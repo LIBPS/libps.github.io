@@ -4,7 +4,7 @@
 ------------
 
 ### All Software Of LIB Provisional Studio：
-### [Announcement Release:Go Goals, Under Development!](Go_Goals_preview)
+### [Announcement Release:「Smoke of War:Guarding Borders in Star Calendar」, Under Development!](SW-GBSC)
 ### [The First Software[C++]:Life Simulator[Release Version:1.0.0][Update Duration:08/25/2020 - 11/12/2022][Supported Languages: Simplified Chinese]](Life_Simulator)
 ### [The Second Software[C++]:Chinese dictionary[Release Version:1.0.0][Update Duration:08/05/2024(Start:11/04/2022)][Supported Languages: Simplified/Traditional Chinese and English]](https://libps.github.io/en/american/Chinese_dictionary)
 ### [The Second Software[Python]:Chinese dictionary_Python Addition(Alpha Version:0.16.0_alpha)[Update Duration:02/25/2024(Start:06/14/2022)][Supported Languages: Simplified Chinese]](https://libps.github.io/en/american/Chinese_dictionary_Python)
