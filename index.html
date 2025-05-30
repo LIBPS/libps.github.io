@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择语言 / Select Language</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .region-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .language-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .language-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .language-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .language-item a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            width: 100%;
+        }
+
+        .flag-icon {
+            width: 32px;
+            height: 24px;
+            margin-right: 15px;
+            border-radius: 3px;
+        }
+
+        .disabled {
+            color: #999;
+            cursor: not-allowed;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="region-card">
+        <h2>🌏 亚洲及太平洋地区（包括大洋洲）</h2>
+        <div class="language-list">
+            <div class="language-item">
+                <a href="https://libps.github.io/zh/index">
+                    <span class="flag-icon flag-icon-cn"></span>
+                    简体中文（中国大陆）
+                </a>
+            </div>
+            <div class="language-item">
+                <a href="https://libps.github.io/zh-hkmo/index">
+                    <span class="flag-icon flag-icon-hk"></span>
+                    <span class="flag-icon flag-icon-mo"></span>
+                    繁體中文（香港澳門）
+                </a>
+            </div>
+            <div class="language-item">
+                <a href="https://libps.github.io/zh-tw/index">
+                    <span class="flag-icon flag-icon-cn"></span>
+                    繁體中文（台灣地區）
+                </a>
+            </div>
+            <div class="language-item">
+                <a href="https://libps.github.io/en-hk/index">
+                    <span class="flag-icon flag-icon-hk"></span>
+                    English (Hong Kong)
+                </a>
+            </div>
+            <div class="language-item disabled">
+                <span class="flag-icon flag-icon-mo"></span>
+                Português (Macau)
+            </div>
+            <div class="language-item disabled">
+                <span class="flag-icon flag-icon-jp"></span>
+                日本語（日本）
+            </div>
+            <div class="language-item disabled">
+                <span class="flag-icon flag-icon-kr"></span>
+                한국어(대한민국)
+            </div>
+        </div>
+    </div>
+
+    <div class="region-card">
+        <h2>🌍 北美洲、南美洲和欧洲（包括非洲）</h2>
+        <div class="language-list">
+            <div class="language-item">
+                <a href="https://libps.github.io/en-us/index">
+                    <span class="flag-icon flag-icon-us"></span>
+                    American English (United States)
+                </a>
+            </div>
+            <div class="language-item">
+                <a href="https://libps.github.io/en-uk/index">
+                    <span class="flag-icon flag-icon-gb"></span>
+                    British English (United Kingdom)
+                </a>
+            </div>
+            <div class="language-item disabled">
+                <span class="flag-icon flag-icon-fr"></span>
+                Français (France)
+            </div>
+            <div class="language-item disabled">
+                <span class="flag-icon flag-icon-ru"></span>
+                Русский (Российская Федерация)
+            </div>
+            <div class="language-item disabled">
+                <span class="flag-icon flag-icon-es"></span>
+                Español (España)
+            </div>
+            <div class="language-item disabled">
+                <span class="flag-icon flag-icon-pt"></span>
+                Português (Portugal)
+            </div>
+            <div class="language-item disabled">
+                <span class="flag-icon flag-icon-br"></span>
+                Português (Brasil)
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2020-2025 LIBPS. All Rights Reserved. | LIB 临时工作室版权所有</p>
+        <p>推荐使用 Chrome 或 Edge 浏览器访问本站</p>
+    </footer>
+</body>
+</html>
