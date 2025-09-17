@@ -59,9 +59,12 @@ The content of the service refers to the multi-platform dictionary query tool (h
 
 **6.7 If any clause of this Agreement is partially invalid or unenforceable for any reason, the remaining clauses shall remain valid and binding on both parties.**
 
+**This page may be translated by artificial intelligence.**
+
 **(End)**
-### LIB Provisional Studio  Supreme
+### LIB Provisional Studio
 
 ### [Return to LIB Provisional Studio: Software Products](Software)
 
 ##### [English (Hong Kong) - Switch Your Language](https://libps.github.io/index)
+
