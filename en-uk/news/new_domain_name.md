@@ -1,6 +1,5 @@
 ## LIB Provisional Studio's New Milestone: Domain Name Upgrade
 ### China Standard Time [UTC+8]: 1 September, 2024
-
 **In this era of rapid information development, an excellent domain name is crucial for a studio's brand building and online identity. Today, LIB Provisional Studio is honoured to announce that we have officially acquired a new domain name: _http://libps.top_ (which expired on 14 July 2025, please visit _https://libps.org_).**
 
 **The new domain name is not only more concise and easier to remember, but also more intuitively reflects our studio's name and brand. Its acquisition marks a further expansion of the provisional studio in the online domain and an enhancement of brand influence.**
@@ -20,4 +19,5 @@
 ### [Back to LIB Provisional Studio: Studio News](https://libps.github.io/en-uk/News)
 
 ##### [British English (United Kingdom) - Switch Your Language](https://libps.github.io/index)
+
 
