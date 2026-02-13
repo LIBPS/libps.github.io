@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - LIB Provisional Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body { font-family: 'Noto Sans SC', 'Noto Sans TC', 'Inter', sans-serif; overflow: hidden; background-color: #0f172a; }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .gradient-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.15), rgba(15, 23, 42, 0) 60%);
+            animation: pulse-glow 8s infinite alternate;
+        }
+        @keyframes pulse-glow {
+            0% { opacity: 0.4; transform: scale(1); }
+            100% { opacity: 0.7; transform: scale(1.1); }
+        }
+        .lang-btn.active { background-color: rgba(255, 255, 255, 0.2); font-weight: bold; color: #fff; }
+        .lang-btn { color: rgba(255, 255, 255, 0.6); }
+        .fade-text {
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+            opacity: 1; transform: translateY(0);
+        }
+        .fade-out { opacity: 0; transform: translateY(5px); }
+        .static-404 {
+            background: linear-gradient(135deg, #22d3ee 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.3));
+        }
+    </style>
+</head>
+<body class="text-white h-screen w-screen relative selection:bg-cyan-500 selection:text-white">
+
+    <canvas id="particleCanvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+    <div class="absolute inset-0 w-full h-full pointer-events-none gradient-bg z-0"></div>
+
+    <div class="relative z-10 w-full h-full flex flex-col items-center justify-center px-4">
+        
+        <div class="absolute top-6 right-6 md:top-10 md:right-10 flex space-x-1 glass-card rounded-full p-1.5 z-50">
+            <button onclick="switchLang('zh')" class="lang-btn active px-4 py-1.5 rounded-full text-xs md:text-sm hover:bg-white/10 transition">简</button>
+            <button onclick="switchLang('tw')" class="lang-btn px-4 py-1.5 rounded-full text-xs md:text-sm hover:bg-white/10 transition">繁</button>
+            <button onclick="switchLang('en')" class="lang-btn px-4 py-1.5 rounded-full text-xs md:text-sm hover:bg-white/10 transition">EN</button>
+        </div>
+
+        <div class="glass-card rounded-3xl p-8 md:p-14 max-w-2xl w-full text-center border-t border-white/10 shadow-2xl backdrop-blur-xl">
+            
+            <div class="mb-8 flex justify-center items-center space-x-3 opacity-90">
+                <div class="p-1 bg-white/5 rounded-lg border border-white/10 flex items-center justify-center shadow-inner">
+                    <img src="https://avatars.githubusercontent.com/u/160314821?s=400&u=13c209c79fbc38c99b3455188471ccab7a8109d8&v=4" 
+                         alt="LIB Provisonal Studio Logo" 
+                         class="w-8 h-8 md:w-9 md:h-9 rounded-md object-cover">
+                </div>
+                <span class="font-bold tracking-[0.2em] text-sm text-cyan-100 uppercase">LIB Provisional Studio</span>
+            </div>
+
+            <h1 class="static-404 text-8xl md:text-[10rem] font-bold leading-none mb-2 tracking-tighter">404</h1>
+
+            <h2 id="title" class="text-2xl md:text-3xl font-bold mb-6 mt-4 text-white drop-shadow-md fade-text">页面未找到</h2>
+            
+            <div class="relative py-8 my-8 border-t border-b border-white/10">
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#162032] px-3 rounded-full border border-white/10">
+                    <i data-lucide="quote" class="w-5 h-5 text-cyan-500 fill-current"></i>
+                </div>
+                
+                <div id="quote-container" class="fade-text">
+                    <p id="quote" class="text-cyan-50/90 italic font-light text-xl md:text-2xl font-serif leading-relaxed px-4">
+                        "人生天地之间，若白驹过隙，忽然而已。"
+                    </p>
+                    <p id="quote-author" class="text-xs text-cyan-400/80 mt-4 uppercase tracking-[0.2em] font-bold">— 庄子 (Zhuangzi)</p>
+                </div>
+            </div>
+
+            <p id="description" class="text-gray-400 mb-10 fade-text text-sm md:text-base px-4">
+                您正在寻找的页面似乎已经消逝在数据的洪流之中。
+            </p>
+
+            <div class="flex justify-center w-full px-4 md:px-10">
+                <a href="https://libps.org" class="flex items-center justify-center gap-2 text-white bg-gradient-to-br from-cyan-600 to-blue-700 hover:from-cyan-500 hover:to-blue-600 active:scale-95 font-medium rounded-xl text-sm px-8 py-3.5 transition-all shadow-lg shadow-cyan-900/20 border border-white/10 hover:shadow-cyan-500/30">
+                    <i data-lucide="home" class="w-4 h-4"></i>
+                    <span id="homeBtn">返回主页</span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="absolute bottom-6 text-gray-500 text-[10px] md:text-xs text-center w-full tracking-wider opacity-60">
+            <p>&copy; <span id="year">2026</span> LIB Provisional Studio | All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        const _0x5d8f = {
+            'zh': {
+                'title': "页面未找到",
+                'quote': "“人生天地之间，若白驹过隙，忽然而已。”",
+                'author': "— 庄子 · 知北游",
+                'desc': "您寻找的页面如同白驹过隙般消失在时间的长河中。",
+                'home': "返回官网"
+            },
+            'tw': {
+                'title': "頁面未找到",
+                'quote': "“人生天地之間，若白駒過隙，忽然而已。”",
+                'author': "— 莊子 · 知北遊",
+                'desc': "您尋找的頁面如同白駒過隙般消失在時間的長河中。",
+                'home': "返回官網"
+            },
+            'en': {
+                'title': "Page Not Found",
+                'quote': "“Comrades! If we don't write code now, we won't have time to write code later!”",
+                'author': "— Studio Leader", 
+                'desc': "The page you are looking for has been disconnected from the matrix.",
+                'home': "Return Home"
+            }
+        };
+
+        function switchLang(_0x2c9f) {
+            document.querySelectorAll('.lang-btn').forEach(_0x3a7b => {
+                _0x3a7b.classList.remove('active');
+            });
+            const _0x4e1d = Array.from(document.querySelectorAll('.lang-btn'));
+            const _0x1a3c = _0x4e1d.find(_0x3b8a => _0x3b8a.getAttribute('onclick').includes(`'${_0x2c9f}'`));
+            if(_0x1a3c) _0x1a3c.classList.add('active');
+            
+            const _0x5a12 = _0x5d8f[_0x2c9f];
+            const _0x3f6a = [
+                document.getElementById('title'),
+                document.getElementById('quote-container'),
+                document.getElementById('description'),
+                document.getElementById('homeBtn')
+            ];
+            
+            _0x3f6a.forEach(_0x1d9c => _0x1d9c.classList.add('fade-out'));
+            
+            setTimeout(() => {
+                document.getElementById('title').textContent = _0x5a12.title;
+                document.getElementById('quote').textContent = _0x5a12.quote;
+                document.getElementById('quote-author').textContent = _0x5a12.author;
+                document.getElementById('description').textContent = _0x5a12.desc;
+                document.getElementById('homeBtn').textContent = _0x5a12.home;
+                _0x3f6a.forEach(_0x2e7f => _0x2e7f.classList.remove('fade-out'));
+            }, 400);
+        }
+
+        const _0x2b3c = document.getElementById('particleCanvas');
+        const _0x1f4d = _0x2b3c.getContext('2d');
+        let _0x3c6a, _0x4d2b;
+        let _0x5c9e = [];
+        const _0x1a9e = 50;
+        const _0x3b7d = 180;
+        const _0x2f8a = 250;
+        let _0x4e8a = { x: null, y: null };
+        
+        window.addEventListener('mousemove', _0x3d7a => {
+            _0x4e8a.x = _0x3d7a.x;
+            _0x4e8a.y = _0x3d7a.y;
+        });
+        window.addEventListener('touchmove', _0x2c7b => {
+            _0x4e8a.x = _0x2c7b.touches[0].clientX;
+            _0x4e8a.y = _0x2c7b.touches[0].clientY;
+        });
+        window.addEventListener('resize', _0x2d4f);
+        
+        function _0x2d4f() {
+            _0x3c6a = _0x2b3c.width = window.innerWidth;
+            _0x4d2b = _0x2b3c.height = window.innerHeight;
+        }
+        
+        class _0x3f8a {
+            constructor() {
+                this.x = Math.random() * _0x3c6a;
+                this.y = Math.random() * _0x4d2b;
+                this.vx = (Math.random() - 0.5) * 0.8;
+                this.vy = (Math.random() - 0.5) * 0.8;
+                this.size = Math.random() * 2 + 0.5;
+                const _0x1c2d = ['rgba(34, 211, 238, ', 'rgba(129, 140, 248, ', 'rgba(192, 132, 252, '];
+                this.baseColor = _0x1c2d[Math.floor(Math.random() * _0x1c2d.length)];
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > _0x3c6a) this.vx *= -1;
+                if (this.y < 0 || this.y > _0x4d2b) this.vy *= -1;
+                if (_0x4e8a.x != null) {
+                    let _0x3a9b = _0x4e8a.x - this.x;
+                    let _0x2b8c = _0x4e8a.y - this.y;
+                    let _0x1d5e = Math.sqrt(_0x3a9b * _0x3a9b + _0x2b8c * _0x2b8c);
+                    if (_0x1d5e < _0x2f8a) {
+                        const _0x4c1d = _0x3a9b / _0x1d5e;
+                        const _0x3e2a = _0x2b8c / _0x1d5e;
+                        const _0x2a7c = (_0x2f8a - _0x1d5e) / _0x2f8a;
+                        const _0x1b9d = _0x4c1d * _0x2a7c * this.size * 2;
+                        const _0x4f3c = _0x3e2a * _0x2a7c * this.size * 2;
+                        this.x -= _0x1b9d;
+                        this.y -= _0x4f3c;
+                    }
+                }
+            }
+            draw() {
+                _0x1f4d.beginPath();
+                _0x1f4d.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                _0x1f4d.fillStyle = this.baseColor + '0.6)';
+                _0x1f4d.fill();
+            }
+        }
+        
+        function _0x4b2d() {
+            _0x5c9e = [];
+            for (let _0x3c7a = 0; _0x3c7a < _0x1a9e; _0x3c7a++) {
+                _0x5c9e.push(new _0x3f8a());
+            }
+        }
+        
+        function _0x1c7e() {
+            _0x1f4d.clearRect(0, 0, _0x3c6a, _0x4d2b);
+            for (let _0x2e9a = 0; _0x2e9a < _0x5c9e.length; _0x2e9a++) {
+                _0x5c9e[_0x2e9a].update();
+                _0x5c9e[_0x2e9a].draw();
+                for (let _0x3d8b = _0x2e9a; _0x3d8b < _0x5c9e.length; _0x3d8b++) {
+                    let _0x4a9c = _0x5c9e[_0x2e9a].x - _0x5c9e[_0x3d8b].x;
+                    let _0x2b7d = _0x5c9e[_0x2e9a].y - _0x5c9e[_0x3d8b].y;
+                    let _0x1e5c = Math.sqrt(_0x4a9c * _0x4a9c + _0x2b7d * _0x2b7d);
+                    if (_0x1e5c < _0x3b7d) {
+                        _0x1f4d.beginPath();
+                        let _0x3c9d = 1 - (_0x1e5c / _0x3b7d);
+                        _0x1f4d.strokeStyle = 'rgba(255, 255, 255,' + (_0x3c9d * 0.1) + ')';
+                        _0x1f4d.lineWidth = 0.5;
+                        _0x1f4d.moveTo(_0x5c9e[_0x2e9a].x, _0x5c9e[_0x2e9a].y);
+                        _0x1f4d.lineTo(_0x5c9e[_0x3d8b].x, _0x5c9e[_0x3d8b].y);
+                        _0x1f4d.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(_0x1c7e);
+        }
+        
+        _0x2d4f();
+        _0x4b2d();
+        _0x1c7e();
+    </script>
+</body>
+</html>

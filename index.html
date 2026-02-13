@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择语言 / Select Language</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --gray: #95a5a6;
+            --disabled-bg: rgba(255, 255, 255, 0.04);
+            --disabled-text: #7f8c8d;
+            --border: rgba(52, 73, 94, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        
+        .region-section {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .section-header h2 {
+            font-weight: 400;
+            font-size: 1.5rem;
+            color: var(--light);
+        }
+        
+        .section-icon {
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+        
+        .language-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .language-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .language-card.active {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+        
+        .language-card.active::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .language-card.active:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+            border-color: rgba(52, 152, 219, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .language-card.active:hover::before {
+            opacity: 1;
+        }
+        
+        .language-card.disabled {
+            background: var(--disabled-bg);
+            opacity: 0.7;
+            cursor: default;
+        }
+        
+        .language-card.disabled .language-name {
+            color: var(--disabled-text);
+        }
+        
+        .language-card.disabled .language-region {
+            color: #5d6d7e;
+        }
+        
+        .card-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .flag-container {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            min-width: 60px;
+        }
+        
+        .flag-icon {
+            width: 36px;
+            height: 24px;
+            border-radius: 3px;
+            object-fit: cover;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        .custom-flag {
+            width: 36px;
+            height: 24px;
+            border-radius: 3px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        .double-flag {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .language-info {
+            flex: 1;
+        }
+        
+        .language-name {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--light);
+        }
+        
+        .language-region {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .status-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-available {
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+        }
+        
+        .status-translation {
+            background: rgba(241, 196, 15, 0.2);
+            color: #f1c40f;
+        }
+        
+        .status-not-supported {
+            background: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .language-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>语言选择 / Language Selection</h1>
+            <p>选择您的首选语言 / Select your preferred language</p>
+        </div>
+        
+        <div class="region-section">
+            <div class="section-header">
+                <span class="section-icon">🌏</span>
+                <h2>亚太及大洋洲地区</h2>
+            </div>
+            <div class="language-grid">
+                <a href="https://libps.github.io/zh/index" class="language-card active">
+                    <span class="status-badge status-available">可用</span>
+                    <div class="card-content">
+                        <div class="flag-container">
+                            <span class="flag-icon flag-icon-cn"></span>
+                        </div>
+                        <div class="language-info">
+                            <div class="language-name">简体中文</div>
+                            <div class="language-region">中国大陆</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://libps.github.io/zh-hkmo/index" class="language-card active">
+                    <span class="status-badge status-available">可用</span>
+                    <div class="card-content">
+                        <div class="flag-container double-flag">
+                            <span class="flag-icon flag-icon-hk"></span>
+                            <span class="flag-icon flag-icon-mo"></span>
+                        </div>
+                        <div class="language-info">
+                            <div class="language-name">繁體中文</div>
+                            <div class="language-region">香港澳門</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://libps.github.io/zh-tw/index" class="language-card active">
+                    <span class="status-badge status-available">可用</span>
+                    <div class="card-content">
+                        <div class="flag-container">
+                            <img src="https://libps.github.io/Flag_of_Chinese_Taipei.png" alt="中华台北" class="custom-flag">
+                        </div>
+                        <div class="language-info">
+                            <div class="language-name">繁體中文</div>
+                            <div class="language-region">台灣地區</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://libps.github.io/en-hk/index" class="language-card active">
+                    <span class="status-badge status-available">可用</span>
+                    <div class="card-content">
+                        <div class="flag-container">
+                            <span class="flag-icon flag-icon-hk"></span>
+                        </div>
+                        <div class="language-info">
+                            <div class="language-name">English</div>
+                            <div class="language-region">Hong Kong</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <div class="language-card disabled">
+                    <span class="status-badge status-translation">需要翻译</span>
+                    <div class="card-content">
+                        <div class="flag-container">
+                            <span class="flag-icon flag-icon-mo"></span>
+                        </div>
+                        <div class="language-info">
+                            <div class="language-name">Português</div>
+                            <div class="language-region">Macau</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="language-card disabled">
+                    <span class="status-badge status-not-supported">不支持</span>
+                    <div class="card-content">
+                        <div class="flag-container">
+                            <span class="flag-icon flag-icon-jp"></span>
+                        </div>
+                        <div class="language-info">
+                            <div class="language-name">日本語</div>
+                            <div class="language-region">日本</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="language-card disabled">
+                    <span class="status-badge status-translation">需要翻译</span>
+                    <div class="card-content">
+                        <div class="flag-container">
+                            <span class="flag-icon flag-icon-kr"></span>
+                        </div>
+                        <div class="language-info">
+                            <div class="language-name">한국어</div>
+                            <div class="language-region">대한민국</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="region-section">
+            <div class="section-header">
+                <span class="section-icon">🌍</span>
+                <h2>美洲、欧洲及非洲地区</h2>
+            </div>
+            <div class="language-grid">
+                <a href="https://libps.github.io/en-us/index" class="language-card active">
+                    <span class="status-badge status-available">可用</span>
+                    <div class="card-content">
+                        <div class="flag-container">
+                            <span class="flag-icon flag-icon-us"></span>
+                        </div>
+                        <div class="language-info">
+                            <div class="language-name">American English</div>
+                            <div class="language-region">United States</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://libps.github.io/en-uk/index" class="language-card active">
+                    <span class="status-badge status-available">可用</span>
+                    <div class="card-content">
+                        <div class="flag-container">
+                            <span class="flag-icon flag-icon-gb"></span>
+                        </div>
+                        <div class="language-info">
+                            <div class="language-name">British English</div>
+                            <div class="language-region">United Kingdom</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <div class="language-card disabled">
+                    <span class="status-badge status-translation">需要翻译</span>
+                    <div class="card-content">
+                        <div class="flag-container">
+                            <span class="flag-icon flag-icon-fr"></span>
+                        </div>
+                        <div class="language-info">
+                            <div class="language-name">Français</div>
+                            <div class="language-region">France</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="language-card disabled">
+                    <span class="status-badge status-translation">需要翻译</span>
+                    <div class="card-content">
+                        <div class="flag-container">
+                            <span class="flag-icon flag-icon-ru"></span>
+                        </div>
+                        <div class="language-info">
+                            <div class="language-name">Русский</div>
+                            <div class="language-region">Российская Федерация</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="language-card disabled">
+                    <span class="status-badge status-translation">需要翻译</span>
+                    <div class="card-content">
+                        <div class="flag-container">
+                            <span class="flag-icon flag-icon-es"></span>
+                        </div>
+                        <div class="language-info">
+                            <div class="language-name">Español</div>
+                            <div class="language-region">España</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="language-card disabled">
+                    <span class="status-badge status-translation">需要翻译</span>
+                    <div class="card-content">
+                        <div class="flag-container">
+                            <span class="flag-icon flag-icon-pt"></span>
+                        </div>
+                        <div class="language-info">
+                            <div class="language-name">Português</div>
+                            <div class="language-region">Portugal</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="language-card disabled">
+                    <span class="status-badge status-translation">需要翻译</span>
+                    <div class="card-content">
+                        <div class="flag-container">
+                            <span class="flag-icon flag-icon-br"></span>
+                        </div>
+                        <div class="language-info">
+                            <div class="language-name">Português</div>
+                            <div class="language-region">Brasil</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h1>LIB 临时工作室 官方网站</h1>
+            <h2>LIB Provisional Studio Official Website ( 2020 - 2026 )</h2>
+        </div>
+    </div>
+</body>
+</html>

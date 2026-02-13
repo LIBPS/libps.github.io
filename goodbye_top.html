@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>告别 libps.top | LIB 临时工作室</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a4a 0%, #0c1b33 100%);
+            color: #e0f0ff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(25,55,109,0.3)"/></svg>');
+            background-size: cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            z-index: 1;
+        }
+        
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .logo-container {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            padding: 15px;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 30px rgba(52, 152, 219, 0.5);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+        
+        .domain-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .domain-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+        }
+        
+        .old-domain {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .old-domain::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 10%;
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #e74c3c, transparent);
+        }
+        
+        .arrow {
+            font-size: 3rem;
+            margin: 1.5rem 0;
+            color: #3498db;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .new-domain {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #2ecc71;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px rgba(46, 204, 113, 0.5);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .timeline {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .timeline-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #3498db;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #3498db, #2ecc71);
+        }
+        
+        .timeline-date {
+            min-width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1.5rem;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+        }
+        
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            flex: 1;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .timeline-content h3 {
+            color: #2ecc71;
+            margin-bottom: 0.5rem;
+        }
+        
+        .message {
+            text-align: center;
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .message p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #3498db;
+            margin-top: 2rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: #3498db;
+            transform: translateY(-5px);
+        }
+        
+        .social-link i {
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .old-domain {
+                font-size: 2.5rem;
+            }
+            
+            .new-domain {
+                font-size: 2rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .timeline-item::before {
+                left: 15px;
+            }
+            
+            .timeline-date {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- 动态星空背景 -->
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">LIBPS</div>
+            </div>
+            <h1>告别 LIB 临时工作室首个域名</h1>
+            <p class="subtitle">一个时代的结束，新征程的开始</p>
+        </header>
+        
+        <div class="domain-box">
+            <div class="old-domain">libps.top</div>
+            <div class="arrow">↓</div>
+            <div class="new-domain">libps.org</div>
+            <p>我们的官方网站已迁移至全新域名</p>
+            <a href="http://libps.org" class="cta-button">
+                <i class="fas fa-external-link-alt"></i> 访问新官网
+            </a>
+        </div>
+        
+        <div class="message">
+            <p>亲爱的 LIB 临时工作室的成员和用户们：</p>
+            <p>今天，我们怀着既感伤又充满希望的心情，正式告别陪伴我们走过一段重要旅程的域名—— libps.top。</p>
+            <p>在过去的岁月里，这个域名见证了我们的成长、创新与协作。从最初的工作室到如今的工作室，libps.top 承载了无数代码、创意和珍贵的回忆。</p>
+            <p>域名虽变，初心不改。我们将在全新的 libps.org 上开启更精彩的篇章。</p>
+            <p>感谢您一直以来的支持与陪伴，期待在新家与您继续共创未来！</p>
+            <div class="signature">LIB 临时工作室的全体成员</div>
+        </div>
+        
+        <div class="timeline">
+            <h2 class="timeline-title">libps.top 历史时刻</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2020</div>
+                <div class="timeline-content">
+                    <h3>工作室成立</h3>
+                    <p>LIB 临时工作室成立，最初专注于小型软件开发和沙盒游戏项目。</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2022</div>
+                <div class="timeline-content">
+                    <h3>黄金发展期</h3>
+                    <p>工作室进入第一次快速发展阶段，发布了多款软件产品和地图。</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2024</div>
+                <div class="timeline-content">
+                    <h3>获取 libps.top 域名</h3>
+                    <p>2024年8月14日，libps.top域名被正式注册，成为工作室首个官方域名。</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2024</div>
+                <div class="timeline-content">
+                    <h3>获取 libps.org 域名</h3>
+                    <p>2024年12月12日，libps.org域名被正式注册，成为工作室第二个官方域名。</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2025</div>
+                <div class="timeline-content">
+                    <h3>新起点</h3>
+                    <p>随着团队的重组，我们决定完全迁移至libps.org，开启全新征程。</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2025</div>
+                <div class="timeline-content">
+                    <h3>时代的落幕</h3>
+                    <p>随着时间的推移，libps.top 正式准备在2025年8月14日停止服务。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="social-links">
+            <a href="https://github.com/LIBPS" class="social-link"><i class="fab fa-github"></i></a>
+        </div>
+        <p>© 2020-2026 LIB Provisional Studio. 保留所有权利。</p>
+        <p>libps.top（2024～2025） → libps.org（2024～NOW）</p>
+    </div>
+    
+    <script>
+        // 创建星空背景（依旧在html里面写js，工作室传统属于是。）
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 150;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // 随机位置和大小
+                const size = Math.random() * 3;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // 随机动画延迟
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        // 页面加载时创建星星
+        window.addEventListener('load', createStars);
+        
+        // 添加滚动效果
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const stars = document.querySelector('.stars');
+            stars.style.transform = `translateY(${scrollPosition * 0.2}px)`;
+        });
+    </script>
+</body>
+</html>
